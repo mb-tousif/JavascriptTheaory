@@ -89,6 +89,42 @@ function removeCommonNumber(numbers){
 }
 console.log(removeCommonNumber(numbers));
 
+let marks = [45, 79, 65, 43, 57, 90, 60, 83];
+
+//------------------Lowest number of a ARRAY----------------
+function lowestNumber(marks) {
+  let num = marks[0];
+  for (let i = 0; i < marks.length; i++) {
+    if (marks[i] < num) {
+      num = marks[i];
+    }
+  }
+  return num;
+}
+console.log(lowestNumber(marks));
+
+//------------------AVG of a Number ARRAY----------------
+function avg(marks) {
+  let sum = 0;
+  for (let i = 0; i < marks.length; i++) {
+    sum += marks[i];
+  }
+  let mean = sum / marks.length;
+  return mean;
+}
+console.log(avg(marks));
+//------------------Highest number of a ARRAY----------------
+function highestmark(marks) {
+  let result = marks[0];
+  for (let i = 0; i < marks.length; i++) {
+    if (marks[i] > result) {
+      result = marks[i];
+    }
+  }
+  return result;
+}
+console.log(highestmark(marks));
+
 //------Problem-1*-------Finding smallest Number From Array----------
 //-------------while Loops----------
 let studentMarks = [67, 54, 88, 45, 90, 77, 79, 40, 70, 36, 65, 59];
@@ -117,7 +153,7 @@ function minStudentMarks(studentMarks){
   return minMarks;
 }
 console.log(minStudentMarks(studentMarks));
-//------Problem-*-------Finding smallest number from three different number---------
+//------Problem--------Finding smallest number from three different number---------
 //-------------From Array----------
 let classStudents = [127, 230, 185];
 function mostStudents(classStudents){
@@ -153,7 +189,6 @@ let weight = [67, 55, 43, 34, 58, 85, 48];
   let total = 0;
   for(let i = 0; i <weight.length; i++){
     total += weight[i];
-    return total;
   }
   let a = total;
 function mean(a){
@@ -167,3 +202,131 @@ console.log(mean(total));
 //   return mean; 
 // }
 // console.log("The average of weight:- ", + mean());
+
+// function একটা অবশ্য জিনিস। বিশেষ করে সিম্পল একটা ফাংশন কখন ডিক্লেয়ার করতে হয়। কখন ফাংশন থেকে return করে। আর কিভাবে ফাংশন এর মধ্যে parameter নিতে হয়। 
+
+//-------Function--Concept-------
+
+//----write a function that show number is +/-.
+
+function isPositive(number){
+  if( number > 0){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+let result = isPositive
+
+//----print all even number from 1-20----
+
+function evenDegit(){
+  for(let i = 1; i<= 20; i++){
+    if(i % 2 ==0){
+      console.log(i);
+    }if(i % 2 !=0){
+      console.log("Odd number:- ", i);
+    }
+  }
+}
+
+evenDegit();
+
+//count numbers divisible by 3 from 1-20;
+function divisibleBy3(){
+  let count = 0;
+  for(let i = 1; i <= 20; i++){
+    if(i % 3 == 0){
+      count = count+1;
+    }
+  }
+  return count;
+}
+
+console.log(divisibleBy3());
+
+//calculate the mean of all the numbers that is divisible by 3 from 1 to n;
+
+function average(n){
+  let sum = 0, coUnt = 0;
+  for(let i = 1; i < n; i++){
+    if(i%3 == 0){
+      sum = sum + i;//i here bcz i = ?/3 not one.
+      coUnt = coUnt + 1;
+    }
+  }
+  let avg = sum/coUnt
+  return avg;
+}
+
+console.log(average(60));
+
+//--Question:- count the number of vowel in a string 
+
+let string = "The quick brown fox jumps over a lazy dog."
+function countVowel(string){
+  // let vowel = 0;
+  let vowels = "";
+  for (let i = 0; i < string.length; i++){
+    let letter = string[i].toLowerCase();
+    if (letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"){
+      vowels += letter;
+    }
+  }
+  return vowels;
+}
+
+console.log(countVowel(string));
+
+/* mular dam? for first 2kg = 30tk/kg, 2k+ = 25kg/kg.
+write a function to calculate price based on given quantity & handle erros--*/
+
+function mularPrice(quantity){
+  if(typeof quantity != "number" || quantity <= 0){
+    return "Please enter valid quantity"
+  }
+  if(quantity > 19){
+    return "please order less than 20kg."
+  }
+  let price = 0;
+  if(quantity <= 2){
+    price = 30* quantity;
+  }else{
+    price = 25 * quantity;
+  }
+  return price;
+}
+
+console.log(mularPrice(21));
+console.log(mularPrice(10));
+console.log(mularPrice(2));
+console.log(mularPrice(0));
+
+/* write a function for calculating Electric Bill. first 100 units price 6tk, 101 units to 200 units price 8tk, 200+ units price 10tk. now calculate the bill? */
+function calculatingBill(units){
+  if (typeof units != 'number' || units <= 0) {
+    return "Please enter valid units!"
+  }
+  if( units <= 100){
+    electricBill = units*6;
+    return electricBill;
+  }
+  if(units <=200){
+    let regularCharge = 100* 6;
+    electricBill= (units-100)*8 + regularCharge;
+    return electricBill;
+  }
+  if(units > 200){
+    let regularCharge = 100* 6;
+    let extraCharge = (200 - 100) * 8
+    electricBill = (units - 200) * 10 + extraCharge + regularCharge;
+    return electricBill;
+  }
+}
+
+console.log('Total elcetric bill charge:- ',calculatingBill(99));
+console.log('Total elcetric bill charge:- ',calculatingBill(199));
+console.log('Total elcetric bill charge:- ',calculatingBill(260));
+console.log('Total elcetric bill charge:- ',calculatingBill(-260));
+console.log('Total elcetric bill charge:- ',calculatingBill("tousif"));
