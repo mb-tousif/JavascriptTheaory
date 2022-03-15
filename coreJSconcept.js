@@ -330,3 +330,195 @@ console.log('Total elcetric bill charge:- ',calculatingBill(199));
 console.log('Total elcetric bill charge:- ',calculatingBill(260));
 console.log('Total elcetric bill charge:- ',calculatingBill(-260));
 console.log('Total elcetric bill charge:- ',calculatingBill("tousif"));
+
+//--------------SOME PROBLEM Solving---------------
+
+//--Q-1--User iput feet & get output in Inch......
+function feetToInch(feet) {
+  let result = feet * 12;
+  return result;
+}
+
+console.log("Calculation of Inch:- ", feetToInch(8));
+
+//--Q-2--User iput CM & get output in Meter......
+
+function centimeterToMeter(CM) {
+  let result = CM * .01;
+  return result;
+}
+
+console.log("Calculation of Meter:- ", centimeterToMeter(800));
+
+//--Q-3---how many pages need to print Book-----------
+
+const firstBookPages = 100;
+const secondBookPages = 200;
+const thirdBookPages = 300;
+
+function paperRequirements(Book1, Book2, Book3){
+  let totalPages = ((firstBookPages * Book1) + (secondBookPages * Book2) + (thirdBookPages * Book3));
+  return totalPages;
+}
+
+console.log("Total:- ", paperRequirements(4, 5, 7), " pages need to print those Books.");
+
+//--Q-4------Show your BestFriend name from function which is biggest in length------------
+
+let fndName = ["Nazim", "Manik", "Anowar", "Takreem", "Shiblu", "Monir"];
+
+function bestFriend(fndName){
+  let longFndName = fndName[0];
+  for (let i = 0; i < fndName.length; i++){
+    if (fndName[i].length > longFndName.length){
+     longFndName = fndName[i];
+   }
+  }
+  return longFndName;
+}
+
+console.log(bestFriend(fndName));
+
+//--Q-5-write a fuction which will retun new array from old array where the value will be negative number--
+
+let result = [67, 56, 34, 76, -80, 48, 45];
+function positiveResult(result){
+  let updateResult = [];
+  for(i = 0; i<result.length; i++){
+    if(result.length[i] <= 0){
+      updateResult.push();
+      break
+    }
+  }
+  return updateResult;
+}
+
+console.log(positiveResult(result));
+
+function celsiusConverter(fahrenheit){
+  var temparture =(fahrenheit-32)*5/9;
+return temparture
+  console.log(temparture);
+}
+console.log(celsiusConverter(34));
+
+function message(names){
+  var customMsg = (names + " Welcome to Programming Hero");
+  return customMsg;
+}
+console.log(message('Tousif'));
+
+function fahrenheitConverter(celsius){
+  var temparture = (celsius * 9/5) + 32;
+  return temparture;
+}
+
+console.log(fahrenheitConverter(32));
+//  programe a function for food delivery process.
+
+ function foodPandda(FoodNames, quantity){
+   if(FoodNames.toLowerCase()=="pizza" && quantity >=1){
+     let price = quantity*50;
+     var orderInfo = "Order successfull! "+ quantity + " PIZZA & PRICE:- "+ price;
+     return orderInfo;
+   }else{
+     var a = "Sorry! Submit your order properly. Thank You!"
+     console.log(a);
+   }
+ }
+
+ console.log(foodPandda('pIzza', 1));
+ console.log(foodPandda('pizZa', 0));
+ console.log(foodPandda('Pizza', 5));
+ console.log(foodPandda('PiZza', 3));
+
+
+function oneToHundred(){
+  var i = 0;
+  while(i<=99){
+    i++,
+    console.log(i)
+  }
+return i;
+} 
+console.log(oneToHundred())
+
+function oddNum(){
+  for(var i=50;i<=80;i++){
+    if((i%2)!=0){
+    console.log(i)
+    }
+  }
+}
+oddNum();
+//-----------LARGEST NUMBER----------
+function largestNumber(a,b,c){
+  if(a>b&&a>c){
+    return a;
+  }
+  else if(b>c&&b>a){
+    return b;
+  }
+  else{
+    return c;
+  }
+}
+console.log(largestNumber(56,88,69));
+//-----------SMALLEST NUMBER----------
+function smallestNumber(x,y,z){
+  if(x<y&&x<z){
+    return x;
+  }
+  else if(y<x&&y<z){
+    return x;
+  }
+  else{
+    return z;
+  }
+}
+console.log(smallestNumber(59,58,56));
+//-----------SMALLEST NUMBER in an Arrey----------
+
+let playerAges = [34, 23, 25, 24, 28, 31, 20, 27, 37, 36, 29];
+function youngPlayer(playerAges){
+  let youngAge = playerAges[0];
+  for(i=0; i<playerAges.length; i++){
+    const ages = playerAges[i];
+    if(ages<youngAge){
+      youngAge=ages;
+    }
+  }
+  return youngAge
+}
+console.log(youngPlayer(playerAges));
+
+//---Print in Console the odd numbers less than 100---
+for(let i=0; i<100; i++){
+    if(i%2 ==1){
+ console.log(i);
+ }
+}
+
+//-----Print in Console the multiplication table with 7-----
+const number = 7;
+for(let i = 1; i <= 10; i++){
+    console.log(`${number} x ${i} = ${i * number}`);
+}
+
+//-----Calculate 10!----
+let factorial = 1;
+for(let i=1; i<=10; i++){
+  factorial *= i;
+}
+console.log(factorial);
+
+//---Find the maximum number in an array of numbers
+let marks = [45, 79, 65, 43, 57, 90, 60, 83];
+function maxNumber(marks) {
+    let num = Math.max([45, 79, 65, 43, 57, 90, 60, 83]);
+    // for(let i = 0; i<marks.length; i++){
+    // }
+    return num;
+}
+
+console.log(maxNumber(marks));
